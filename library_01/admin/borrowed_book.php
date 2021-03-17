@@ -21,6 +21,7 @@
 						  <thead>
 							  <tr>
 								  <th>Book Title</th>
+								  <th>Borrower ID</th>
 								  <th>Borrower</th>
 								  <th>Date Borrowed</th>
 								  <th>Due Date</th>
@@ -31,9 +32,11 @@
 							<?php
 								include("includes/connection.php");
 
-								$sql = "SELECT borrowers.id as bor_id, tbl_books.bookTitle as booktitle, borrowers.fname as fname, borrowers.lname as lname, borrowed_books.borrowed_date as borrowed_date, borrowed_books.due_date as due_date FROM borrowed_books 
+								$sql = "SELECT borrowed_books.id as main_id, borrowers.id as bor_id, tbl_books.bookTitle as booktitle, borrowers.preid as preid, borrowers.fname as fname, borrowers.lname as lname, borrowed_books.borrowed_date as borrowed_date, borrowed_books.due_date as due_date, borrowed_books.return_date as return_date 
+								FROM borrowed_books 
                                 join tbl_books on borrowed_books.book_id = tbl_books.id
                                 join borrowers on borrowed_books.borrower_id = borrowers.preid
+								where return_date = 'NULL'
                                 ORDER BY tbl_books.id";
 								$result=mysqli_query($connect, $sql); //rs.open sql,con
 
@@ -41,11 +44,12 @@
 							{ ?><!--open of while -->
 							<tr>
 								<td><?php echo $row['booktitle']; ?></td>
+								<td><?php echo $row['preid']; ?></td>
 								<td><?php echo $row['fname'].' '.$row['lname'] ; ?></td>
                                 <td><?php echo $row['borrowed_date']; ?></td>
 								<td><?php echo $row['due_date']; ?></td>
 								<td class="center">
-									<a class="btn btn-info" href="#">
+									<a class="btn btn-info" href="return_book.php?mID=<?php echo $row['main_id']; ?>">
 										Return this book
 									</a>
 

@@ -1,14 +1,19 @@
 <?php
-$presentedid = $_POST['presentedid'];
-$user_types = $_POST['user_types'];
-$fn = $_POST['txtfirstname'];
 $ln = $_POST['txtlastname'];
+$fn = $_POST['txtfirstname'];
+$midint = $_POST['midint'];
+$presentedid = $_POST['presentedid'];
+
+$course = $_POST['course'];
+$yns = $_POST['yns'];
 $contactNo = $_POST['contactNo'];
+$Address = $_POST['Address'];
+$user_types = $_POST['user_types'];
 
 
 include('includes/connection.php');
 
-$sql = "INSERT INTO borrowers VALUES(NULL,'$fn','$ln','$presentedid','$user_types', '$contactNo')";
+$sql = "INSERT INTO borrowers VALUES(NULL,'$ln','$fn','$midint','$presentedid', '$course', '$yns', '$contactNo', '$Address', '$user_types')";
 
 
 

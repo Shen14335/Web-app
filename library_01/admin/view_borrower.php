@@ -20,9 +20,9 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
-								  <th>Name</th>
+							  	  <th>ID Number</th>
+								  <th>Borrowers Name</th>
 								  <th>User type</th>
-                                  <th>PresentedID</th>
 								  <th>Actions</th>
 							  </tr>
 						  </thead>
@@ -37,9 +37,9 @@
 							while ($row=mysqli_fetch_array($result))
 							{ ?><!--open of while -->
 							<tr>
+								<td><?php echo $row['preid']; ?></td>
 								<td><?php echo $row['lname'].",".$row['fname']; ?></td>
 								<td><?php echo $row['usertype']; ?></td>
-                                <td><?php echo $row['preid']; ?></td>
 								<td class="center">
 									<a class="btn btn-info" href="edit_data.php?uID=<?php echo $row['id']; ?>">
 										<i class="halflings-icon white edit"></i>

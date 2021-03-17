@@ -33,6 +33,7 @@
                                   <th>Cost Price</th>
                                   <th>Pulisher</th>
                                   <th>Year</th>
+								  <th>Availability</th>
                                   <th>Remarks</th>
                                   <th>Action</th>
 							  </tr>
@@ -59,6 +60,7 @@
 								<td><?php echo $row['CostPrice']?></td>
 								<td><?php echo $row['pubisherID']?></td>
 								<td><?php echo $row['YearBook']?></td>
+								<td><?php echo $row['book_status']?></td>
 								<td><?php echo $row['Remarks']?></td>
 								<td class="center">
 									<a class="btn btn-info" href="edit_book.php?bID=<?php echo $row['id']; ?>">
@@ -67,7 +69,7 @@
 									<a class="btn btn-success" href="borrow_book.php?bID=<?php echo $row['id']; ?>">
 									Borrow this book
 									</a>
-									<a class="btn btn-danger" onclick="return confirmDel()" href="#">
+									<a class="btn btn-danger" onclick="return confirmDel()" href="delete_book.php?delID=<?php echo $row['id'];?>">
 										<i class="halflings-icon white trash"></i>
 									</a>
 								</td>

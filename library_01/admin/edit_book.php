@@ -49,7 +49,7 @@ $id = $_GET['bID'];
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal" method="post" action="update_book.php">
-							<fieldset>
+						<fieldset class="box-left">
 							  
 
                               <div class="control-group">
@@ -107,6 +107,7 @@ $id = $_GET['bID'];
 								  <input class="input-xlarge focused" name="Volume" id="Volume" type="text" value="<?php echo $Volume; ?>">
 								</div>
 							  </div>
+							
 
 							  <div class="control-group">
 								<label class="control-label" for="Pages">Pages</label>
@@ -114,6 +115,9 @@ $id = $_GET['bID'];
 								  <input class="input-xlarge focused" name="Pages" id="Pages" type="text" value="<?php echo $Pages; ?>">
 								</div>
 							  </div>
+
+							</fieldset>
+							<fieldset class="box-right">
 
 							   <div class="control-group">
 								<label class="control-label" for="SourceOfFund">Source Of Fund</label>
@@ -165,12 +169,13 @@ $id = $_GET['bID'];
 								  <textarea id="Remarks" name="Remarks" rows="4" cols="50" value="<?php echo $Remarks; ?>"></textarea>
 								</div>
 							  </div>
+							</fieldset>
 
 							  <div class="form-actions">
 								<button type="submit" onclick="return confirmUpdate()" class="btn btn-primary">Update this Book</button>
                                 <input type="hidden" name="hid" value="<?php echo $id; ?>">
 							  </div>
-							</fieldset>
+							
 						</form>
 
 					</div>

@@ -4,6 +4,15 @@
 	get_sidebar();
 	get_bread_three();
 ?>
+//<?php
+//function validateForm() {
+//  var x = document.forms["myform"]["control-label"].value;
+// if (x == "") {
+//    alert("Name must be filled out");
+//    return false;
+//  }
+//}
+//?>
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
@@ -16,7 +25,7 @@
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal" method="post" action="save_new_book.php">
-							<fieldset>
+							<fieldset class="box-left">
 
 								<div class="control-group">
 									<label class="control-label" for="bookIsbn">ISBN</label>
@@ -66,14 +75,15 @@
 								  <input class="input-xlarge focused" name="Edition" id="Edition" type="text" placeholder="Edition">
 								</div>
 							  </div>
-
+							
 							  <div class="control-group">
 								<label class="control-label" for="Volume">Volumes</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="Volume" id="Volume" type="text" placeholder="Volume">
 								</div>
 							  </div>
-
+							</fieldset>
+							<fieldset class="box-right">
 							  <div class="control-group">
 								<label class="control-label" for="Pages">Pages</label>
 								<div class="controls">
@@ -123,17 +133,19 @@
 								  <textarea id="bookDescription" name="bookDescription" rows="4" cols="50" placeholder="Book Description"></textarea>
 								</div>
 							  </div>
-
+							</fieldset>
 							  <div class="form-actions">
 								<button type="submit" onclick="return confirmAdd()" class="btn btn-primary">Add New Book</button>
 							  </div>
-							</fieldset>
+							
 						</form>
 
 					</div>
 				</div><!--/span-->
 
 			</div><!--/row-->
+
+
 <?php
 	get_footer();
 ?>

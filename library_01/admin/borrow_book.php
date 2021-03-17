@@ -13,7 +13,6 @@ $id = $_GET['bID'];
         $bookTitle = $row['bookTitle'];
         $bookAuthor = $row['bookAuthor'];
         $pubisherID = $row['pubisherID'];
-        $bookLanguage = $row['bookLanguage'];
         $bookCategory = $row['bookCategory'];
         $bookDescription = $row['bookDescription'];
         $book_status = $row['book_status'];

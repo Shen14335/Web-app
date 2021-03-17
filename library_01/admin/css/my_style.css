@@ -1,0 +1,24 @@
+.box-left{
+    display: inline;
+    
+    border: 1px;
+    box-sizing:border-box;
+}
+
+.box-right{
+    display: inline;
+    
+    border: 1px;
+    box-sizing:border-box;
+
+}
+
+.box-mid{
+    border: 1px;
+    margin: auto;
+    text-align: center;
+}
+
+.box-mid img{
+    height: 500px;
+}

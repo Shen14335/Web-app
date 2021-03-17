@@ -3,11 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2021 at 07:01 AM
+-- Generation Time: Mar 17, 2021 at 01:36 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
-CREATE Database library_01;
-use library_01;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,17 +31,17 @@ CREATE TABLE `admin` (
   `id` int(3) UNSIGNED ZEROFILL NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
-  `username` varchar(10) NOT NULL,
-  `password` varchar(15) NOT NULL
+  `un` varchar(10) NOT NULL,
+  `ps` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `fname`, `lname`, `username`, `password`) VALUES
-(001, 'Librarian', 'Librarian', 'admin', 'admin'),
-(002, 'Lib01', 'TestUser', 'lib01', 'jo82dymvfnm');
+INSERT INTO `admin` (`id`, `fname`, `lname`, `un`, `ps`) VALUES
+(005, 'LibrarianFname', 'LibrarianLname', 'admin', 'password'),
+(006, 'Lib02Fname', 'Lib02Lname', 'lib02', 'password');
 
 -- --------------------------------------------------------
 
@@ -60,14 +58,6 @@ CREATE TABLE `borrowed_books` (
   `return_date` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `borrowed_books`
---
-
-INSERT INTO `borrowed_books` (`id`, `book_id`, `borrower_id`, `borrowed_date`, `due_date`, `return_date`) VALUES
-(00002, '00005', '00-02', '2021-03-06 12:54:17', '2021-03-13', 'NULL'),
-(00003, '00006', '00-01', '2021-03-11 13:04:12', '2021-03-18', 'NULL');
-
 -- --------------------------------------------------------
 
 --
@@ -76,21 +66,37 @@ INSERT INTO `borrowed_books` (`id`, `book_id`, `borrower_id`, `borrowed_date`, `
 
 CREATE TABLE `borrowers` (
   `id` int(3) UNSIGNED ZEROFILL NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `midint` varchar(20) NOT NULL,
+  `preid` varchar(50) NOT NULL,
+  `course` varchar(50) NOT NULL,
+  `yns` varchar(50) NOT NULL,
+  `contactNo` varchar(11) NOT NULL,
+  `Address` varchar(100) NOT NULL,
+  `usertype` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `super_admin`
+--
+
+CREATE TABLE `super_admin` (
+  `id` int(3) UNSIGNED ZEROFILL NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
-  `preid` varchar(50) NOT NULL,
-  `usertype` varchar(50) NOT NULL,
-  `contactNo` varchar(11) NOT NULL
+  `un` varchar(50) NOT NULL,
+  `ps` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `borrowers`
+-- Dumping data for table `super_admin`
 --
 
-INSERT INTO `borrowers` (`id`, `fname`, `lname`, `preid`, `usertype`, `contactNo`) VALUES
-(001, 'Borrower', '01', '00-01', 'Student', '09070407404'),
-(002, 'Borrower', '02', '00-02', 'Staff', '09070407404'),
-(003, 'Borrower Fname', 'Borrower Lname', '00-03', 'Student', '09070407404');
+INSERT INTO `super_admin` (`id`, `fname`, `lname`, `un`, `ps`) VALUES
+(001, 'Supera', 'Admina', 'super_admin', 'password');
 
 -- --------------------------------------------------------
 
@@ -120,14 +126,6 @@ CREATE TABLE `tbl_books` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_books`
---
-
-INSERT INTO `tbl_books` (`id`, `bookIsbn`, `AccessionNumber`, `DateRecieved`, `Class`, `bookTitle`, `bookAuthor`, `Edition`, `Volume`, `Pages`, `SourceOfFund`, `CostPrice`, `pubisherID`, `YearBook`, `bookCategory`, `bookDescription`, `book_status`, `Remarks`) VALUES
-(00006, '9781587132050', '001', '2021-03-11', 'test class', 'Rizal', 'test author', '1', '1', '244', 'sacsa', '123', 'P0002', '1267', 'History', 'Desc', 'Borrowed', ''),
-(00007, '9781587132051', '002', '2021-03-11', 'test class', 'Rizal', 'Jose Rizal', '1', '1', '244', 'sacsa', '123', 'P0003', '1267', 'History', 'Updated', 'Available', 'updated');
-
---
 -- Indexes for dumped tables
 --
 
@@ -150,6 +148,12 @@ ALTER TABLE `borrowers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `super_admin`
+--
+ALTER TABLE `super_admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_books`
 --
 ALTER TABLE `tbl_books`
@@ -164,25 +168,31 @@ ALTER TABLE `tbl_books`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `borrowed_books`
 --
 ALTER TABLE `borrowed_books`
-  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `borrowers`
 --
 ALTER TABLE `borrowers`
-  MODIFY `id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `super_admin`
+--
+ALTER TABLE `super_admin`
+  MODIFY `id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_books`
 --
 ALTER TABLE `tbl_books`
-  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
