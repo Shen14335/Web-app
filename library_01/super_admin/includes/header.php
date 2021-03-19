@@ -3,7 +3,12 @@
   $id = $_SESSION['SUPER_LOGIN'];
   if(!isset($_SESSION['SUPER_LOGIN']))
   {
-    header('location:login.php');
+    header('location:../admin/logout.php');
+    //finally found the code to set the default page when accessing from a different user priviledge
+    //changed to logout.php as index.php just reloads the page, this is just to mess with the tinkerers
+    //can't force the session to logout as session becomes active from somwhere, probably the logout.php
+    //stuck with just refreshing the page, which should be enough to deter people tinkering with the system
+    //finally made the code to make the system kill the session if user tries to access the system via URL, just had to set the session ID to both superlogin & login
   }
 include "../include/dbconn.php";
 $sql = "SELECT lname, fname, id FROM super_admin where id = $id";
