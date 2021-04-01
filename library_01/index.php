@@ -38,7 +38,7 @@ include "restriction.php";
 			<div class="wrap-login100" >
 				<div class="login100-form-title">
 					<span class="login100-form-title-1">
-						Library System Prototype
+						Library System
 					</span>
 				</div>
 

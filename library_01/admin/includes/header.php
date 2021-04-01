@@ -90,7 +90,7 @@ $sql = "SELECT lname, fname, id FROM admin where id = $id";
 	<link rel="stylesheet" href="css/my_style.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="img/favicon.ico">
-	<link rel="stylesheet" href="../../plugins/morris/morris.css">
+	<link rel="stylesheet" href="..\admin\plugins\morris\morris.css">
 		
 </head>
 
