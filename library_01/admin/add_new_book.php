@@ -4,15 +4,6 @@
 	get_sidebar();
 	get_bread_three();
 ?>
-//<?php
-//function validateForm() {
-//  var x = document.forms["myform"]["control-label"].value;
-// if (x == "") {
-//    alert("Name must be filled out");
-//    return false;
-//  }
-//}
-//?>
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
@@ -68,6 +59,7 @@
 								  <input class="input-xlarge focused" name="bookTitle" id="bookTitle" type="text" placeholder="Book Title">
 								</div>
 							  </div>
+							
 
 							  <div class="control-group">
 								<label class="control-label" for="Edition">Edition</label>
@@ -144,8 +136,6 @@
 				</div><!--/span-->
 
 			</div><!--/row-->
-
-
 <?php
 	get_footer();
 ?>

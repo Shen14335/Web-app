@@ -104,8 +104,7 @@ $sql = "SELECT lname, fname, id FROM admin where id = $id";
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span> </span></a>
-								
+				<a class="brand" href="index.php"><span>IDS Library System </span></a>
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">

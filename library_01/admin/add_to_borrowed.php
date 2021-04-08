@@ -6,7 +6,7 @@ $BorrowersID = $_POST['BorrowersID'];
 //$dueDate = NOW() ->modify('+7 day');
 
 $dueDate = date('Y-m-d', strtotime("+3 day"));
-// add payment fine here
+$insertDate = date('Y-m-d', strtotime("now"));
 
 include('includes/connection.php');
 $sql ="SELECT * FROM tbl_books where id = '$hid_book_id'";
@@ -34,7 +34,7 @@ if($book_status != "Available" or $usercount != 1)
 
 }else{
 
-    $sql = "INSERT INTO borrowed_books VALUES(NULL,'$hid_book_id','$BorrowersID',NOW(),'$dueDate', 'NULL')";
+    $sql = "INSERT INTO borrowed_books VALUES(NULL,'$hid_book_id','$BorrowersID','$insertDate','$dueDate', 'NULL')";
 
 
 

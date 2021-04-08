@@ -6,8 +6,6 @@
 ?>
 			<h1 style = "color:red;">Book maybe borrowed already! or Borrower info not Correct or missing.</h1>
             <a class="btn btn-success" href="view_all_books.php">Booklist</a>
-
-            
 <?php
 	get_footer();
 ?>

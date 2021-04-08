@@ -3,9 +3,9 @@
 @media (min-width: 1200px) {
 	
 	.container-fluid-full {
-		overflow: hidden;
-		position: relative;
-		height: 100%;
+		overflow: visible;
+		position: static;
+		height: 100vh;
 	}
 	
 	#content {
@@ -38,9 +38,9 @@
 @media only screen and (min-width: 980px) and (max-width: 1199px){
 	
 	.container-fluid-full {
-		overflow: hidden;
-		position: relative;
-		height: 100%;
+		overflow: visible;
+		position: static;
+		height: 100vh;
 	}
 	
 	#content {
@@ -114,7 +114,7 @@
 
 	.task .time {
 		display: inline-block;
-		float: right;
+		float: none;
 		width: 20%;
 		padding: 10px 10px;
 		font-size: 12px;
@@ -278,7 +278,7 @@
 
 	.task .time {
 		display: inline-block;
-		float: right;
+		float: none;
 		width: 25%;
 		padding: 10px 10px;
 		font-size: 10px;
@@ -390,7 +390,7 @@
 
 	.task .time {
 		display: inline-block;
-		float: right;
+		float: none;
 		width: 25%;
 		padding: 10px 10px;
 		font-size: 10px;

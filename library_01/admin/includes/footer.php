@@ -3,6 +3,15 @@
 	</div><!--/container-fluid-full end-->
 	<div class="clearfix"></div>
 	<footer>
+	<div class="row-fluid sortable">
+				<div class="box span12">
+							<fieldset class="box-mid">
+								<img style="position:relative; left:0px;" src="images/logo01.jpg" alt="">	
+							</fieldset>
+
+				</div><!--/span-->
+
+			</div><!--/row-->
 		<p>
 			<span style="text-align:left;float:left">&copy; 2020 <a href="#" alt="Administrator Panel">IT Solutions</a></span>			
 		</p>

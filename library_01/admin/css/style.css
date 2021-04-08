@@ -289,6 +289,11 @@ h6 {
 =================================================================== */
 .navbar {
 	margin-bottom: 0px;
+	left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1037;
 }
 
 .navbar-inner {
@@ -697,7 +702,7 @@ ul.messages li .message {
 #content {
 	background: #ffffff;
 	filter: none;
-	min-height: 100%;
+	min-height: 100vh;
 	padding: 20px 20px;
 	position: relative;
 }
@@ -2483,12 +2488,15 @@ div.uploader{
 
 footer {
 	min-height: 24px;
-	background: #1C2B36;;
-	color: #fff !important;
-	-webkit-border-radius: 0px;
-	   -moz-border-radius: 0px;
-	      	border-radius: 0px;
+    bottom: 0vh;
+    background: #1C2B36;
+    color: #fff !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    position: fixed;
 }
+
 
 /* Sparkline stats
 =================================================================== */
