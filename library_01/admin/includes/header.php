@@ -3,12 +3,7 @@
   $id = $_SESSION['LOGIN'];
   if(!isset($_SESSION['LOGIN']))
   {
-    header('location:../admin/logout.php');
-    //finally found the code to set the default page when accessing from a different user priviledge
-    //changed to logout.php as index.php just reloads the page, this is just to mess with the tinkerers
-    //can't force the session to logout as session becomes active from somwhere, probably the logout.php
-    //stuck with just refreshing the page, which should be enough to deter people tinkering with the system
-    //finally made the code to make the system kill the session if user tries to access the system via URL, just had to set the session ID to both superlogin & login
+    header('location:login.php');
   }
 include "../include/dbconn.php";
 $sql = "SELECT lname, fname, id FROM admin where id = $id";
@@ -90,7 +85,7 @@ $sql = "SELECT lname, fname, id FROM admin where id = $id";
 	<link rel="stylesheet" href="css/my_style.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="img/favicon.ico">
-	<link rel="stylesheet" href="..\admin\plugins\morris\morris.css">
+	<link rel="stylesheet" href="../../plugins/morris/morris.css">
 		
 </head>
 

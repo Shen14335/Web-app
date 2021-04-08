@@ -5,7 +5,7 @@
 	<div id="sidebar-left" class="span2">
 		<div class="nav-collapse sidebar-nav">
 			<ul class="nav nav-tabs nav-stacked main-menu">
-				<li><a href="index.php"><i class="icon-dashboard"></i><span class="hidden-tablet">DashBoard</span></a></li>
+				<li><a href="index.php"><i class="icon-dashboard"></i><span class="hidden-tablet">Home</span></a></li>
 
 				<li>
 					<a class="submenu" href="book_management.php"><i class="icon-reorder"></i><span class="hidden-tablet">Book Management</span></a>
