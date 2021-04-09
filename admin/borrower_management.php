@@ -5,7 +5,7 @@
 	get_bread();
 ?>
 
-<ul class="borrower-icons" style="list-style-type:none" font-size="2em">
+<ul class="borrower-icons" style="list-style-type:none;font-family:Cooper black;" >
             <li style="font-size:2em";>
                 <a class="submenu" href="add_new_borrower.php">
                     <img src="images/add_user.png" alt="View Books" style="width:6em;height:6em;">

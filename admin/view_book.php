@@ -56,7 +56,10 @@
 				
 				
 
-			</div><!--/row-->
+			</div>
+			<!--/row-->
+
+
 <?php
 	get_footer();
 ?>

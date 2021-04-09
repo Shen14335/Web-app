@@ -19,7 +19,7 @@
 				<li style="font-size:2em; padding: 0em 1.5em 2em 0em;";>
 					<a class="submenu" href="book_management.php">
 						<img src="images/book_management.png" alt="View Books" style="width:6em;height:6em;">
-						<p align="center">
+						<p align="center" style="font-family:Cooper black">
 							Book Management
 						</p>
 					</a>
@@ -28,7 +28,7 @@
 				<li style="font-size:2em; padding: 0em 0 2em 1.5em;";>
 					<a class="submenu" href="borrower_management.php">
 						<img src="images/user_management.webp" alt="View Books" style="width:6em;height:6em;">
-						<p align="center">
+						<p align="center" style="font-family: Cooper black">
 							Borrower Management
 						</p>
 					</a>

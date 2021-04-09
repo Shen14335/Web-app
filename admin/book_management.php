@@ -5,9 +5,9 @@
 	get_bread();
 ?>
 
-<ul class="borrower-icons" style="list-style-type:none">
+<ul class="borrower-icons" style="list-style-type:none; font-family:Cooper black">
             <li style="font-size:2.2em";>
-                <a class="submenu" href="add_new_borrower.php">
+                <a class="submenu" href="add_new_book.php">
                     <img src="images/add_book.png" alt="View Books" style="width:6em;height:6em;">
                     <span class="hidden-tablet">
                     Add New Book
@@ -16,7 +16,7 @@
             </li>
 
             <li style="font-size:2.2em";>
-                <a class="submenu" href="view_borrower.php">
+                <a class="submenu" href="view_book.php">
                     <img src="images/view_book.png" alt="View Books" style="width:6em;height:6em;">
                     <span class="hidden-tablet">
                         View Books
@@ -25,7 +25,7 @@
             </li>
 
             <li style="font-size:2.2em";>
-                <a class="submenu" href="view_borrower.php">
+                <a class="submenu" href="view_all_books.php">
                     <img src="images/borrow_book.svg" alt="View Books" style="width:6em;height:6em;">
                     <span class="hidden-tablet">
                         Borrow
@@ -34,7 +34,7 @@
             </li>
 
             <li style="font-size:2.2em";>
-                <a class="submenu" href="view_borrower.php">
+                <a class="submenu" href="borrowed_book.php">
                     <img src="images/return_book.svg" alt="View Books" style="width:6em;height:6em;">
                     <span class="hidden-tablet">
                         Return
