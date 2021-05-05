@@ -18,6 +18,7 @@
 
 				</li>
 				<li><a class="submenu" href="reports.php"><i class="icon-file-alt"></i><span class="hidden-tablet">Reports</span></a></li>
+				<li><a class="submenu" href="test_print.php"><i class="icon-file-alt"></i><span class="hidden-tablet">Test Print</span></a></li>
 			</ul>
 		</div>
 	</div>
