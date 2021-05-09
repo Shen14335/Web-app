@@ -1,4 +1,12 @@
 <?php
+ if(isset($_POST['Submit']))
+ {
+    $getCategory=$_POST['category'];	
+    echo $getCategory;
+}
+?>
+
+<?php
 $bookIsbn = $_POST['bookIsbn'];
 $AccessionNumber = $_POST['AccessionNumber'];
 $DateRecieved = $_POST['DateRecieved'];

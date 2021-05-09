@@ -199,12 +199,15 @@ th {
     -webkit-box-shadow: none !important;
             box-shadow: none !important;
   }
+  a[href]:after {
+    content: none !important;
+  }
   a,
   a:visited {
     text-decoration: underline;
   }
   a[href]:after {
-    content: " (" attr(href) ")";
+    content: none !important;
   }
   abbr[title]:after {
     content: " (" attr(title) ")";
@@ -6289,6 +6292,9 @@ button.close {
   .visible-print {
     display: block !important;
   }
+  a[href]:after {
+    content: none !important;
+  }
   table.visible-print {
     display: table;
   }
@@ -6307,6 +6313,9 @@ button.close {
   .visible-print-block {
     display: block !important;
   }
+  a[href]:after {
+    content: none !important;
+  }
 }
 .visible-print-inline {
   display: none !important;
@@ -6314,6 +6323,9 @@ button.close {
 @media print {
   .visible-print-inline {
     display: inline !important;
+  }
+  a[href]:after {
+    content: none !important;
   }
 }
 .visible-print-inline-block {
@@ -6323,10 +6335,16 @@ button.close {
   .visible-print-inline-block {
     display: inline-block !important;
   }
+  a[href]:after {
+    content: none !important;
+  }
 }
 @media print {
   .hidden-print {
     display: none !important;
+  }
+  a[href]:after {
+    content: none !important;
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */

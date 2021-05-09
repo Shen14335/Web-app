@@ -15,9 +15,9 @@
 						</div>
 					</div>
 					<!--Admin -->
-					<div class="box-content">
+					<div class="box-content" id="printablediv">
 
-						<table class="table table-striped table-bordered bootstrap-datatable datatable">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable" >
 						  <thead>
 							  <tr>
 							  	  <th>ID Number</th>
@@ -34,34 +34,51 @@
 								//$result -> query($sql);
 								$result=mysqli_query($connect, $sql); //rs.open sql,con
 
-							while ($row=mysqli_fetch_array($result))
-							{ ?><!--open of while -->
-							<tr>
-								<td><?php echo $row['preid']; ?></td>
-								<td><?php echo $row['lname'].",".$row['fname']; ?></td>
-								<td><?php echo $row['usertype']; ?></td>
-								<td class="center">
-									<a class="btn btn-info" href="edit_data.php?uID=<?php echo $row['id']; ?>">
-										<i class="halflings-icon white edit"></i>
-									</a>
-									<a class="btn btn-danger" onclick="return confirmDel()" href="delete_data.php?delID=<?php echo $row['id'];?>">
-										<i class="halflings-icon white trash"></i>
-									</a>
-								</td>
-							</tr>
-							<?php
-							   } //close of while
-							?>
-						  </tbody>
+									while ($row=mysqli_fetch_array($result))
+										{ ?><!--open of while -->
+											<tr>
+												<td><?php echo $row['preid']; ?></td>
+												<td><?php echo $row['lname'].",".$row['fname']; ?></td>
+												<td><?php echo $row['usertype']; ?></td>
+												<td class="center">
+													<a class="btn btn-info" alt="test" href="edit_data.php?uID=<?php echo $row['id']; ?>">
+														<i class="halflings-icon white edit"></i>
+													</a>
+													<a class="btn btn-danger" onclick="return confirmDel()" href="delete_data.php?delID=<?php echo $row['id'];?>">
+														<i class="halflings-icon white trash"></i>
+													</a>
+												</td>
+											</tr>
+									<?php
+										} //close of while
+									?>
+							</tbody>
 					  </table>
 					</div>
-					<!--End Admin -->
-				</div>
-				
-				
-				
-
+							<!--End Admin -->
+					</div>
+							<button class="btn btn-primary" onclick="printDiv('printablediv')">Print</button>
 			</div><!--/row-->
+
+				<script>
+
+				function printDiv(divID) {
+					//Get the HTML of div
+					var divElements = document.getElementById(divID).innerHTML;
+					//Get the HTML of whole page
+					var oldPage = document.body.innerHTML;
+					//Reset the page's HTML with div's HTML only
+					document.body.innerHTML = "<html><head><title></title></head><body>" + 	divElements + "</body>";
+					//Print Page
+					window.print();
+					//Restore orignal HTML
+					document.body.innerHTML = oldPage;
+
+				}
+				</script>
+								
+
+<!--/row-->
 <?php
 	get_footer();
 ?>

@@ -114,7 +114,18 @@
                               <div class="control-group">
 								<label class="control-label" for="bookCategory">Category</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="bookCategory" id="bookCategory" type="text" placeholder="Book Category">
+								  <select name="bookCategory" id="bookCategory">
+												<?php
+													include("includes/connection.php");  // Using database connection file here
+													$records = mysqli_query($connect, "SELECT DISTINCT bookCategory From bookcategory order by bookCategory asc;");  // Use select query here 
+
+													while($data = mysqli_fetch_array($records))
+													{
+														echo "<option value='". $data['bookCategory'] ."'>" .$data['bookCategory'] ."</option>";  // displaying data in option menu
+													}	
+												?>  
+										</select>
+
 								</div>
 							  </div>
 

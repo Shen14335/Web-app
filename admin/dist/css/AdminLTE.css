@@ -4894,6 +4894,9 @@ table.text-center th {
   .content-header {
     display: none !important;
   }
+  a[href]:after {
+    content: none !important;
+  }
   .content-wrapper,
   .right-side,
   .main-footer {

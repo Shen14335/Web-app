@@ -18,6 +18,12 @@
 @import url("halflings.css");											/* Glyphicons Halflings Font */
 @import url("style-forms.css");											/* Forms */
 
+/* Print
+=================================================================== */
+@media print{a[href]:after{content:none}}
+
+
+
 /* Main Colors
 =================================================================== */
 
@@ -649,6 +655,17 @@ ul.notifications li,
 ul.tasks li,
 ul.messages li{
 	width: 260px;
+}
+
+div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 180px;
+}
+}
+.caption {
+    display: block;
 }
 
 ul.notifications li .avatar img,

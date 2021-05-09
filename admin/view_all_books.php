@@ -64,10 +64,10 @@
 								<td><?php echo $row['Remarks']?></td>
 								<td class="center">
 									<a class="btn btn-info" href="edit_book.php?bID=<?php echo $row['id']; ?>">
-										Update this book
+										Update
 									</a>
 									<a class="btn btn-success" href="borrow_book.php?bID=<?php echo $row['id']; ?>">
-									Borrow this book
+									Borrow
 									</a>
 									<a class="btn btn-danger" onclick="return confirmDel()" href="delete_book.php?delID=<?php echo $row['id'];?>">
 										<i class="halflings-icon white trash"></i>
