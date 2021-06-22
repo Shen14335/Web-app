@@ -7,14 +7,17 @@
 	<div class="row-fluid sortable">
 				<div class="box span12">
 							<fieldset class="box-mid">
-								<img style="position:relative; left:0px;" src="images/logo01.jpg" alt="">	
+							<img style="position:relative; left:0px; width:100%; height:90vh" src="images/library_background.jfif" alt="">	
 							</fieldset>
 
 
 
 				</div><!--/span-->
 
-			</div><!--/row-->
+			</div>
+			
+			<!--/row-->
+			<!--
 			<ul style="list-style-type:none; display:inline-flex;font-size:2em;">
 				<li style="font-size:2em; padding: 0em 1.5em 2em 0em;";>
 					<a class="submenu" href="book_management.php">
@@ -34,6 +37,7 @@
 					</a>
 				</li>
 				</ul>
+				-->
 <?php
 	get_footer();
 ?>		

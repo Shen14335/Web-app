@@ -98,9 +98,9 @@
 							  </div> 
 
 							  <div class="control-group">
-								<label class="control-label" for="pubisherID">Pubisher</label>
+								<label class="control-label" for="pubisherID">Publisher</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="pubisherID" id="pubisherID" type="text" placeholder="Pubisher">
+								  <input class="input-xlarge focused" name="pubisherID" id="pubisherID" type="text" placeholder="Publisher">
 								</div>
 							  </div>
 

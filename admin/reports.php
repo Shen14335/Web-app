@@ -21,34 +21,55 @@
 						<table class="table table-striped table-bordered">
 						  <thead>
 							  <tr>
-								  <th>Class</th>
-								  <th>Title</th>
-								  <th>Author</th>
-                                  <th>Accession No</th>
-                                  <th>No of Copies</th>
+								  <th>Books</th>
+								  <th>Borrower</th>
+
 							  </tr>
 						  </thead>
 						  <tbody>
-							<?php
-								include("includes/connection.php");
-
-								$sql = "SELECT *  FROM tbl_books ORDER BY id";
-								$result=mysqli_query($connect, $sql); //rs.open sql,con
-
-							while ($row=mysqli_fetch_array($result))
-							{ ?><!--open of while -->
 							<tr>
-								<td><?php echo $row['Class']; ?></td>
-								<td><?php echo $row['bookTitle']; ?></td>
-								<td><?php echo $row['bookAuthor']?></td>
-								<td><?php echo $row['AccessionNumber']?></td>
-                                <td><?php echo 1 ?></td>
-
-							
+								<td>
+									<a class="btn btn-success" href="view_book.php" style="margin-bottom:1em">Book List</a>
+								</td>
+								<td>
+									<a class="btn btn-success" href="view_borrower.php" style="margin-bottom:1em"> Borrower List</a>
+								</td>
 							</tr>
-							<?php
-							   } //close of while
-							?>
+
+							<tr>
+								<td>
+									<a class="btn btn-success" href="view_all_books.php" style="margin-bottom:1em">Full Detail Book List</a>
+								</td>
+								<td>
+									<a class="btn btn-success" href="view_all_borrowers.php" style="margin-bottom:1em">Full Detail Borrower List</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a class="btn btn-success" href="borrowed_book.php" style="margin-bottom:1em">Borrowed Books</a>
+								</td>
+								<td>
+									
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a class="btn btn-success" href="view_returned.php" style="margin-bottom:1em">Returned Book List</a>
+								</td>
+								<td>
+									
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<a class="btn btn-success" href="category_print.php" style="margin-bottom:1em">Category Book List</a>
+								</td>
+								<td>
+									
+								</td>
+							</tr>
+
 						  </tbody>
 					  </table>
 					</div>

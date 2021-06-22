@@ -85,7 +85,114 @@ $sql = "SELECT lname, fname, id FROM admin where id = $id";
 	<link rel="stylesheet" href="css/my_style.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="img/favicon.ico">
-		
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+---------------------------------------------------------------->
+        <script type="text/javascript" src="dist/jautocalc.js"></script>
+        <script type="text/javascript">
+        <!--
+            $(document).ready(function() {
+
+                function autoCalcSetup() {
+                    $('form[name=cart]').jAutoCalc('destroy');
+                    $('form[name=cart] tr[name=line_items]').jAutoCalc({keyEventsFire: true, decimalPlaces: 2, emptyAsZero: true});
+                    $('form[name=cart]').jAutoCalc({decimalPlaces: 2});
+                }
+                autoCalcSetup();
+
+
+                $('button[name=remove]').click(function(e) {
+                    e.preventDefault();
+
+                    var form = $(this).parents('form')
+                    $(this).parents('tr').remove();
+                    autoCalcSetup();
+
+                });
+
+                $('button[name=add]').click(function(e) {
+                    e.preventDefault();
+
+                    var $table = $(this).parents('table');
+                    var $top = $table.find('tr[name=line_items]').first();
+                    var $new = $top.clone(true);
+
+                    $new.jAutoCalc('destroy');
+                    $new.insertBefore($top);
+                    $new.find('input[type=text]').val('');
+                    autoCalcSetup();
+
+                });
+
+            });
+        //-->
+        </script>
+
+
+<----------------------------------------------------------------
+				<script>
+					function downloadCSV(csv, filename) {
+						var csvFile;
+						var downloadLink;
+
+						// CSV file
+						csvFile = new Blob([csv], {type: "text/csv"});
+
+						// Download link
+						downloadLink = document.createElement("a");
+
+						// File name
+						downloadLink.download = filename;
+
+						// Create a link to the file
+						downloadLink.href = window.URL.createObjectURL(csvFile);
+
+						// Hide download link
+						downloadLink.style.display = "none";
+
+						// Add the link to DOM
+						document.body.appendChild(downloadLink);
+
+						// Click download link
+						downloadLink.click();
+					}
+				</script>
+---------------------------------------------------------------->
+	<script>
+		function exportTableToCSV(filename) {
+			var csv = [];
+			var rows = document.querySelectorAll("table tr");
+			
+			for (var i = 0; i < rows.length; i++) {
+				var row = [], cols = rows[i].querySelectorAll("td, th");
+				
+				for (var j = 0; j < cols.length; j++) 
+					row.push(cols[j].innerText);
+				
+				csv.push(row.join(","));        
+			}
+
+			// Download CSV file
+			downloadCSV(csv.join("\n"), filename);
+		}
+	</script>
+---------------------------------------------------------------->
+								
+<script>
+	function printDiv(divID) {
+		//Get the HTML of div
+		var divElements = document.getElementById(divID).innerHTML;
+		//Get the HTML of whole page
+		var oldPage = document.body.innerHTML;
+		//Reset the page's HTML with div's HTML only
+		document.body.innerHTML = "<html><head><title></title></head><body>" + 	divElements + "</body>";
+		//Print Page
+		window.print();
+		//Restore orignal HTML
+		document.body.innerHTML = oldPage;
+	}
+</script>
+---------------------------------------------------------------->
 </head>
 
 <body>
