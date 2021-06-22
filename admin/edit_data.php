@@ -13,13 +13,16 @@ $id = $_GET['uID'];
         $fname = $row['fname'];
         $midint = $row['midint'];
         $preid = $row['preid'];
+		$semester = $row['semester'];
         $course = $row['course'];
         $yns = $row['yns'];
         $contactNo = $row['contactNo'];
         $Address = $row['Address'];		
+		$usertype = $row['usertype'];
 	}
 
 ?>
+
 <?php
 	require_once("functions/function.php");
 	get_header();
@@ -56,7 +59,7 @@ $id = $_GET['uID'];
 										</div>
 
 										<div class="control-group">
-											<label class="control-label" for="midint">M.I.:</label>
+											<label class="control-label" for="midint">Middle Initial:</label>
 											<div class="controls">
 											<input class="input-xlarge focused" name="midint" id="midint" type="text" value="<?php echo $midint?>">
 											</div>
@@ -68,36 +71,74 @@ $id = $_GET['uID'];
 											<input class="input-xlarge focused" name="presentedid" id="presentedid" type="text" value="<?php echo $preid?>">
 											</div>
 										</div>
-								</div>
-								</fieldset>
-								<fieldset class = "box-right">
-								<div><!--Right Box-->
-										<div class="control-group">
-											<label class="control-label" for="course">Course:</label>
-											<div class="controls">
-											<input class="input-xlarge focused" name="course" id="course" type="text" value="<?php echo $course?>">
-											</div>
-										</div>
-
-										<div class="control-group">
-											<label class="control-label" for="yns">Year and Section:</label>
-											<div class="controls">
-											<input class="input-xlarge focused" name="yns" id="yns" type="text" value="<?php echo $yns?>">
-											</div>
-										</div>
-
 										<div class="control-group">
 											<label class="control-label" for="contactNo">ContactNo:</label>
 											<div class="controls">
 											<input class="input-xlarge focused" name="contactNo" id="contactNo" type="text" value="<?php echo $contactNo?>">
 											</div>
 										</div>
+								</div>
+								</fieldset>
+								<fieldset class = "box-right">
+								<div><!--Right Box-->
+										<div class="control-group">
+												<label class="control-label" for="semester">Semester:</label>
+												<div class="controls">
+													<select id="semester" name="semester">
+														<option value="First Semester">First Semester</option>
+														<option value="Second Semester">Second Semester</option>
+														<option value="Staff">Staff</option>
+													</select>
+												</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="semester">Course:</label>
+											<div class="controls">
+												<select id="course" name="course">
+													<option value="Information Technology">Information Technology</option>
+													<option value="Hospitality Management">Hospitality Management</option>
+													<option value="Tourism Managemen">Tourism Management</option>
+													<option value="Business Management">Business Management</option>
+													<option value="Secondary Education">Secondary Education</option>
+													<option value="Elementary Education">Elementary Education</option>
+													<option value="Associate in Computer Technology">Associate in Computer Technology</option>
+													<option value="TESDA: Bartending">TESDA: Bartending</option>
+													<option value="TESDA:Bread and Pastry">TESDA:Bread and Pastry</option>
+													<option value="TESDA:Computer Systems Servicing">TESDA:Computer Systems Servicing</option>
+													<option value="TESDA:Food and Beverages">TESDA:Food and Beverages</option>
+												</select>
+											</div>
+										</div>
+
+
+										<div class="control-group">
+											<label class="control-label" for="yns">Year</label>
+											<div class="controls">
+											<select id="yns" name="yns">
+														<option value="First Year">First Year</option>
+														<option value="Second Year">Second Year</option>
+														<option value="Third year">Third Year</option>
+														<option value="Fourth Year">Fourth Year</option>
+													</select>
+											</div>
+										</div>
+
+										
 
 										<div class="control-group">
 											<label class="control-label" for="Address">Address:</label>
 											<div class="controls">
 											<input class="input-xlarge focused" name="Address" id="Address" type="text" value="<?php echo $Address?>">
 											</div>
+										</div>
+										<div class="control-group">
+											<label for="utype" class="control-label">Borrower Type</label>
+												<div class="controls">
+													<select id="utype" name = "utype">
+														<option value="Student">Student</option>
+														<option value="Staff">Staff</option>
+													</select>
+												</div>
 										</div>
 							  	</div>
 								</fieldset>

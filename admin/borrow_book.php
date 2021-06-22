@@ -74,15 +74,7 @@ $id = $_GET['bID'];
 								  <input class="input-xlarge focused" name="BorrowersID" id="BorrowersID" type="text">
 								</div>
 							  </div>
-
-                              <div class="control-group">
-								<label class="control-label" for="bookCategory">BorrowersName</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="BorrowersName" id="BorrowersName" type="text" >
-								</div>
-							  </div>
-
-                              
+                             
 
 							  <div class="form-actions">
 								<button type="submit" onclick="return confirmUpdate()" class="btn btn-primary">Borrow this book</button>

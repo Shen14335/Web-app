@@ -14,7 +14,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 			header("location:admin/index.php?id=".$row['id']."");
 			die();
 			}
-		}
+		};
 
 	$sql=mysqli_query($connect, "select * from super_admin");
 		while($row = $sql->fetch_array()){
@@ -27,5 +27,4 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 			}
 
 	header("location:index.php?error");
-
-	}
+}

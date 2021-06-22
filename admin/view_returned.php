@@ -4,6 +4,11 @@
 	get_sidebar();
 	get_bread_two();
 ?>
+
+
+<button class="btn btn-primary" onclick="exportTableToCSV('returned.csv')" style="margin-bottom:1em" >Export CSV</button>
+					
+<button class="btn btn-primary" onclick="printDiv('printablediv')" style="margin-bottom:1em">Print</button>
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
@@ -15,7 +20,7 @@
 						</div>
 					</div>
 					<!--Admin -->
-					<div class="box-content">
+					<div class="box-content" id="printablediv">
 
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>

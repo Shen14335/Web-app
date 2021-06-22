@@ -4,6 +4,10 @@
 	get_sidebar();
 	get_bread_borrower();
 ?>
+
+<button class="btn btn-primary" onclick="exportTableToCSV('Borrowers.csv')" style="margin-bottom:1em" >Export CSV</button>	
+<button class="btn btn-primary" onclick="printDiv('printablediv')" style="margin-bottom:1em">Print</button>
+<a class="btn btn-success" href="view_all_borrowers.php" style="margin-bottom:1em">Full Detail Borrower List</a>
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
@@ -39,7 +43,7 @@
 											<tr>
 												<td><?php echo $row['preid']; ?></td>
 												<td><?php echo $row['lname'].",".$row['fname']; ?></td>
-												<td><?php echo $row['usertype']; ?></td>
+												<td><?php echo $row['utype']; ?></td>
 												<td class="center">
 													<a class="btn btn-info" alt="test" href="edit_data.php?uID=<?php echo $row['id']; ?>">
 														<i class="halflings-icon white edit"></i>
@@ -57,26 +61,9 @@
 					</div>
 							<!--End Admin -->
 					</div>
-							<button class="btn btn-primary" onclick="printDiv('printablediv')">Print</button>
+
 			</div><!--/row-->
 
-				<script>
-
-				function printDiv(divID) {
-					//Get the HTML of div
-					var divElements = document.getElementById(divID).innerHTML;
-					//Get the HTML of whole page
-					var oldPage = document.body.innerHTML;
-					//Reset the page's HTML with div's HTML only
-					document.body.innerHTML = "<html><head><title></title></head><body>" + 	divElements + "</body>";
-					//Print Page
-					window.print();
-					//Restore orignal HTML
-					document.body.innerHTML = oldPage;
-
-				}
-				</script>
-								
 
 <!--/row-->
 <?php

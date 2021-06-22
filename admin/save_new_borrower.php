@@ -3,17 +3,17 @@ $ln = $_POST['txtlastname'];
 $fn = $_POST['txtfirstname'];
 $midint = $_POST['midint'];
 $presentedid = $_POST['presentedid'];
-
+$semester = $_POST['semester'];
 $course = $_POST['course'];
 $yns = $_POST['yns'];
 $contactNo = $_POST['contactNo'];
 $Address = $_POST['Address'];
-$user_types = $_POST['user_types'];
+$utype = $_POST['utype'];
 
 
 include('includes/connection.php');
 
-$sql = "INSERT INTO borrowers VALUES(NULL,'$ln','$fn','$midint','$presentedid', '$course', '$yns', '$contactNo', '$Address', '$user_types')";
+$sql = "INSERT INTO borrowers VALUES(NULL,'$ln','$fn','$midint','$presentedid', '$semester', '$course', '$yns', '$contactNo', '$Address', '$utype')";
 
 
 

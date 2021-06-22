@@ -23,7 +23,9 @@ Category:
 </form>  
 
 
-
+<button class="btn btn-primary" onclick="exportTableToCSV('category.csv')" style="margin-bottom:1em" >Export CSV</button>
+					
+<button class="btn btn-primary" onclick="printDiv('printablediv')" style="margin-bottom:1em">Print</button>
 
 					<!--Admin -->
 					<div class="box-content"  id="printablediv">
@@ -78,8 +80,7 @@ Category:
 					  </table>
 					</div>
 					<!--End Admin -->
-					
-					<button class="btn btn-primary" onclick="printDiv('printablediv')">Print</button>
+
 
 						
 
