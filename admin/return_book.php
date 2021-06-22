@@ -1,3 +1,4 @@
+-------------------------->
 <?php
 $id = $_GET['mID'];
 
@@ -52,13 +53,74 @@ $id = $_GET['mID'];
 
 	//$days = date_diff($insertDate , $new_due);
 
+
 ?>
+-------------------------------->
 <?php
 	require_once("functions/function.php");
 	get_header();
 	get_sidebar();
 	get_bread_five();
 ?>
+-------------------------------->
+
+
+<div class="container">
+        <form name="cart">
+            <table name="cart" class="table table-striped table-bordered">
+                <tr>
+                    <th></th>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>&nbsp;</th>
+                    <th>Item Total</th>
+                </tr>
+                <tr name="line_items">
+                    <td><button name="remove" class="btn btn-danger">Remove</button></td>
+                    <td>Stuff</td>
+                    <td><input type="text" name="qty" value="1"></td>
+                    <td><input type="text" name="price" value="9.99"></td>
+                    <td>&nbsp;</td>
+                    <td><input type="text" name="item_total" value="" jAutoCalc="{qty} * {price}"></td>
+                </tr>
+                <tr name="line_items">
+                    <td><button name="remove" class="btn btn-danger">Remove</button></td>
+                    <td>More Stuff</td>
+                    <td><input type="text" name="qty" value="2"></td>
+                    <td><input type="text" name="price" value="12.50"></td>
+                    <td>&nbsp;</td>
+                    <td><input type="text" name="item_total" value="" jAutoCalc="{qty} * {price}"></td>
+                </tr>
+                <tr name="line_items">
+                    <td><button name="remove" class="btn btn-danger">Remove</button></td>
+                    <td>And More Stuff</td>
+                    <td><input type="text" name="qty" value="3"></td>
+                    <td><input type="text" name="price" value="99.99"></td>
+                    <td>&nbsp;</td>
+                    <td><input type="text" name="item_total" value="" jAutoCalc="{qty} * {price}"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                    <td>Subtotal</td>
+                    <td>&nbsp;</td>
+                    <td><input type="text" name="sub_total" value="" jAutoCalc="SUM({item_total})"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                    <td>Total</td>
+                    <td>&nbsp;</td>
+                    <td><input type="text" name="grand_total" value="" jAutoCalc="{sub_total} + {tax_total}"></td>
+                </tr>
+                <tr>
+                    <td colspan="99"><button name="add"  class="btn btn-primary">Add Row</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+-------------------------------->
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
@@ -69,6 +131,7 @@ $id = $_GET['mID'];
 							<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
 						</div>
 					</div>
+					
 					<div class="box-content">
 						<form class="form-horizontal" method="post" action="add_to_returned.php">
 							<fieldset class="box-left">
@@ -124,41 +187,20 @@ $id = $_GET['mID'];
 								<div class="controls">
 								  <input class="input-xlarge focused" name="" id="" type="text" value="<?php echo $due_date; ?>" disabled>
 								</div>
-							  </div>
-								<div class="control-group">
-								<label class="control-label" for="">Overdue fee per Day</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="" id="" type="text" value="20" disabled>
-								</div>
+							  </div>                          
 							  </div>
 
-                              <div class="control-group">
-								<label class="control-label" for="">Days overdue</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="" id="" type="text" value="<?php echo $no_days; ?>" disabled>
-								</div>
-							  </div>
-
-                              <div class="control-group">
-								<label class="control-label" for="">Amount to be paid</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="" id="" type="text" value="<?php echo $total_paid; ?>" disabled>
-								</div>
-							  </div>
-							  </div>
-                              </fieldset>
-
+                              </fieldset>		  
 							  <div class="form-actions">
 								<button type="submit" onclick="return confirmUpdate()" class="btn btn-primary">Return this book</button>
                                 <input type="hidden" name="hid_01" value="<?php echo $id; ?>">
                                 <input type="hidden" name="hid_02" value="<?php echo $book_id; ?>">
 							  </div>
-							
 						</form>
 
 					</div>
+					
 				</div><!--/span-->
-
 			</div><!--/row-->
 
 	<?php
