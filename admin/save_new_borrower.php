@@ -1,3 +1,5 @@
+//Model
+
 <?php
 $ln = $_POST['txtlastname'];
 $fn = $_POST['txtfirstname'];
@@ -27,3 +29,6 @@ else
 }
 
 ?>
+
+//Controller
+

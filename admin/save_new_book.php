@@ -42,6 +42,7 @@ $sql = "INSERT INTO tbl_books VALUES(NULL,
 '$YearBook', 
 '$bookCategory', 
 '$bookDescription', 
+
 'Available',
 'No Remarks')";
 

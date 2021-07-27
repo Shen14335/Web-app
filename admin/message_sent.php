@@ -9,10 +9,10 @@ $Message = $_POST['Message'];
 
 $ch = curl_init();
 $parameters = array(
-    'apikey' => '7353175284a193edd275d7ab6c39bf08', //Your API KEY
+    'apikey' => '5b76588735d31b0b1fffa8eb7a4a5cac', //Your API KEY
     'number' => $contactno,
     'message' => $Message,
-    'sendername' => 'SEMAPHORE'
+    'sendername' => 'Library'
 );
 curl_setopt( $ch, CURLOPT_URL,'https://semaphore.co/api/v4/messages' );
 curl_setopt( $ch, CURLOPT_POST, 1 );
@@ -27,6 +27,9 @@ curl_close ($ch);
 
 //Show the server response
 //echo $output;
+
+
+//print all numbers in array format
 
 
 ?>
